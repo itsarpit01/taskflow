@@ -6,8 +6,8 @@ A full-stack team task management application with role-based access control, bu
 
 ## 🔗 Links
 
-- **Live URL**: `https://your-app.railway.app` ← (replace after deploy)
-- **GitHub**: `https://github.com/yourusername/taskflow` ← (replace after push)
+- **Live URL**: https://taskflow-production-3758.up.railway.app
+- **GitHub**: https://github.com/itsarpit01/taskflow 
 
 ---
 
@@ -55,7 +55,7 @@ A full-stack team task management application with role-based access control, bu
 | Layer | Technology |
 |---|---|
 | Backend | Node.js, Express.js |
-| Database | SQLite (via better-sqlite3) |
+| Database | SQLite (via sqlite3) |
 | Auth | JWT (jsonwebtoken + bcryptjs) |
 | Validation | express-validator |
 | Frontend | React 18, React Router v6 |
@@ -91,7 +91,7 @@ NODE_ENV=production
 ```
 
 ### Step 4: Get your URL
-Railway provides a public URL like `https://taskflow-production.railway.app`
+Railway provides a public URL like https://taskflow-production.railway.app
 
 ---
 
@@ -133,9 +133,9 @@ npm run dev
 ### Demo Accounts (auto-created on first boot)
 | Email | Password | Role |
 |---|---|---|
-| admin@demo.com | demo1234 | Admin |
-| member@demo.com | demo1234 | Member |
-| alice@demo.com | demo1234 | Member |
+| aman@gmail.com | password1234 | Admin |
+| sumit@gmail.com | password1234 | Member |
+| abhi@gmail.com | password1234 | Member |
 
 ---
 

@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 const db = getDb();
 
-console.log('🌱 Seeding demo data...');
+console.log(' Seeding demo data...');
 
 // Demo users
 const users = [
@@ -70,7 +70,7 @@ for (const p of projects) {
   console.log(`  ✓ Created project: ${p.name} with ${tasks.length} tasks`);
 }
 
-console.log('\n✅ Seed complete!');
+console.log('\n Seed complete!');
 console.log('Demo accounts:');
 console.log('  admin@demo.com / demo1234  (Admin)');
 console.log('  member@demo.com / demo1234 (Member)');

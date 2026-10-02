@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../api';
 import { useAuth } from '../context/AuthContext';
 
-const priorityColors = { low: '#CDBFA3', medium: '#F8E7C9', high: '#F4A261', urgent: '#F0705F' };
+const priorityColors = { low: '#7F9A8E', medium: '#064E3B', high: '#D9731A', urgent: '#D64545' };
 const statusLabels = { todo: 'To Do', in_progress: 'In Progress', review: 'Review', done: 'Done' };
 
 function StatCard({ label, value, color, icon }) {
@@ -81,17 +81,17 @@ export default function Dashboard() {
 
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 32 }}>
-        <StatCard label="To Do" value={taskStats.todo} color="#CDBFA3" icon="○" />
-        <StatCard label="In Progress" value={taskStats.in_progress} color="#F8E7C9" icon="◔" />
-        <StatCard label="In Review" value={taskStats.review} color="#E9B949" icon="◑" />
-        <StatCard label="Completed" value={taskStats.done} color="#4ADE9A" icon="●" />
+        <StatCard label="To Do" value={taskStats.todo} color="#7F9A8E" icon="○" />
+        <StatCard label="In Progress" value={taskStats.in_progress} color="#064E3B" icon="◔" />
+        <StatCard label="In Review" value={taskStats.review} color="#B7791F" icon="◑" />
+        <StatCard label="Completed" value={taskStats.done} color="#0B8A5B" icon="●" />
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 24 }}>
         {/* My Tasks */}
         <div>
           {overdueTasks.length > 0 && (
-            <div className="card" style={{ marginBottom: 20, border: '1px solid rgba(240,112,95,0.25)', background: 'rgba(240,112,95,0.05)' }}>
+            <div className="card" style={{ marginBottom: 20, border: '1px solid rgba(214,69,69,0.25)', background: 'rgba(214,69,69,0.05)' }}>
               <h3 style={{ fontSize: '0.9rem', color: 'var(--red)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
                 ⚠ Overdue ({overdueTasks.length})
               </h3>

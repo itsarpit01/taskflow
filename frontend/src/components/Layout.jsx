@@ -37,7 +37,7 @@ export default function Layout({ children }) {
             <div style={{
               width: 32, height: 32, background: 'var(--accent)', borderRadius: 8,
               display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem',
-              color: '#064E3B'
+              color: '#fff'
             }}>⚡</div>
             TaskFlow
           </div>
@@ -94,7 +94,7 @@ export default function Layout({ children }) {
             <div style={{
               width: 32, height: 32, borderRadius: '50%',
               background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
-              color: '#064E3B',
+              color: '#fff',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '0.75rem', fontWeight: 700, flexShrink: 0
             }}>

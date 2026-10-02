@@ -36,7 +36,8 @@ export default function Layout({ children }) {
           }}>
             <div style={{
               width: 32, height: 32, background: 'var(--accent)', borderRadius: 8,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem'
+              display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem',
+              color: '#064E3B'
             }}>⚡</div>
             TaskFlow
           </div>
@@ -52,7 +53,7 @@ export default function Layout({ children }) {
               display: 'flex', alignItems: 'center', gap: 10, padding: '9px 12px',
               borderRadius: 'var(--radius)', marginBottom: 2, fontWeight: 500,
               fontSize: '0.875rem', transition: 'all var(--transition)',
-              background: isActive ? 'rgba(99,102,241,0.12)' : 'transparent',
+              background: isActive ? 'var(--accent-soft)' : 'transparent',
               color: isActive ? 'var(--accent)' : 'var(--text2)',
               textDecoration: 'none',
             })}>
@@ -71,7 +72,7 @@ export default function Layout({ children }) {
                   display: 'flex', alignItems: 'center', gap: 10, padding: '9px 12px',
                   borderRadius: 'var(--radius)', marginBottom: 2, fontWeight: 500,
                   fontSize: '0.875rem', transition: 'all var(--transition)',
-                  background: isActive ? 'rgba(99,102,241,0.12)' : 'transparent',
+                  background: isActive ? 'var(--accent-soft)' : 'transparent',
                   color: isActive ? 'var(--accent)' : 'var(--text2)',
                   textDecoration: 'none',
                 })}>
@@ -93,6 +94,7 @@ export default function Layout({ children }) {
             <div style={{
               width: 32, height: 32, borderRadius: '50%',
               background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+              color: '#064E3B',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '0.75rem', fontWeight: 700, flexShrink: 0
             }}>
@@ -102,7 +104,7 @@ export default function Layout({ children }) {
               <div style={{ fontSize: '0.82rem', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 {user?.name}
               </div>
-              <span className="badge" style={{ padding: '1px 6px', fontSize: '0.65rem' }}
+              <span style={{ padding: '1px 6px', fontSize: '0.65rem' }}
                     className={`badge badge-${user?.role}`}>
                 {user?.role}
               </span>

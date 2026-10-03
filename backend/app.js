@@ -12,7 +12,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/projects/:projectId/tasks', require('./routes/tasks'));
 app.use('/api/dashboard', require('./routes/dashboard'));
-app.use('/api', require('./routes/dashboard')); // exposes /api/users etc.
+app.use('/api/users', require('./routes/users'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 

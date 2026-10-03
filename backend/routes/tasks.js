@@ -4,6 +4,8 @@ const validate = require('../middleware/validate');
 const { createTaskRules, commentRules } = require('../validators/task.validator');
 const ctrl = require('../controllers/task.controller');
 
+router.param('taskId', validate.idParam);
+
 // Every task route needs a logged-in user who can access this project.
 router.use(authenticate, requireProjectAccess);
 

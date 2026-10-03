@@ -1,24 +1,25 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0a0a0f;
-  --bg2: #111118;
-  --bg3: #16161f;
-  --border: #1e1e2e;
-  --border2: #2a2a3e;
-  --text: #e8e8f0;
-  --text2: #9898b0;
-  --text3: #5a5a70;
-  --accent: #6366f1;
-  --accent-glow: rgba(99,102,241,0.2);
-  --accent2: #22d3ee;
-  --green: #10b981;
-  --yellow: #f59e0b;
-  --red: #ef4444;
-  --orange: #f97316;
+  --bg: #FAF6EC;
+  --bg2: #FFFFFF;
+  --bg3: #F3EBD9;
+  --border: #E6DCC3;
+  --border2: #D3C6A5;
+  --text: #0B3B2E;
+  --text2: #4A6B5E;
+  --text3: #7F9A8E;
+  --accent: #064E3B;
+  --accent-glow: rgba(6,78,59,0.18);
+  --accent-soft: rgba(6,78,59,0.08);
+  --accent2: #B8892B;
+  --green: #0B8A5B;
+  --yellow: #B7791F;
+  --red: #D64545;
+  --orange: #D9731A;
   --radius: 10px;
   --radius-lg: 16px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow: 0 4px 24px rgba(6,78,59,0.10);
   --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --transition: 0.18s ease;
@@ -81,19 +82,19 @@ select option { background: var(--bg3); }
   background: var(--accent);
   color: #fff;
 }
-.btn-primary:hover { background: #5457e5; transform: translateY(-1px); box-shadow: 0 4px 16px var(--accent-glow); }
+.btn-primary:hover { background: #0A6B52; transform: translateY(-1px); box-shadow: 0 4px 16px var(--accent-glow); }
 
 .btn-secondary {
   background: var(--bg3);
   color: var(--text2);
   border: 1px solid var(--border2);
 }
-.btn-secondary:hover { background: var(--border2); color: var(--text); }
+.btn-secondary:hover { background: var(--border); color: var(--text); }
 
 .btn-danger {
-  background: rgba(239,68,68,0.1);
+  background: rgba(214,69,69,0.08);
   color: var(--red);
-  border: 1px solid rgba(239,68,68,0.2);
+  border: 1px solid rgba(214,69,69,0.25);
 }
 .btn-danger:hover { background: var(--red); color: #fff; }
 
@@ -108,6 +109,7 @@ select option { background: var(--bg3); }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px;
+  box-shadow: 0 1px 3px rgba(6,78,59,0.06);
 }
 
 .badge {
@@ -122,16 +124,16 @@ select option { background: var(--bg3); }
   letter-spacing: 0.05em;
 }
 
-.badge-todo { background: rgba(148,163,184,0.1); color: #94a3b8; }
-.badge-in_progress { background: rgba(99,102,241,0.15); color: var(--accent); }
-.badge-review { background: rgba(245,158,11,0.15); color: var(--yellow); }
-.badge-done { background: rgba(16,185,129,0.15); color: var(--green); }
-.badge-low { background: rgba(148,163,184,0.1); color: #94a3b8; }
-.badge-medium { background: rgba(99,102,241,0.15); color: var(--accent); }
-.badge-high { background: rgba(245,158,11,0.15); color: var(--yellow); }
-.badge-urgent { background: rgba(239,68,68,0.15); color: var(--red); }
-.badge-admin { background: rgba(99,102,241,0.15); color: var(--accent2); }
-.badge-member { background: rgba(148,163,184,0.1); color: #94a3b8; }
+.badge-todo { background: rgba(74,107,94,0.12); color: var(--text2); }
+.badge-in_progress { background: rgba(6,78,59,0.10); color: var(--accent); }
+.badge-review { background: rgba(183,121,31,0.14); color: var(--yellow); }
+.badge-done { background: rgba(11,138,91,0.14); color: var(--green); }
+.badge-low { background: rgba(74,107,94,0.12); color: var(--text2); }
+.badge-medium { background: rgba(6,78,59,0.10); color: var(--accent); }
+.badge-high { background: rgba(217,115,26,0.14); color: var(--orange); }
+.badge-urgent { background: rgba(214,69,69,0.12); color: var(--red); }
+.badge-admin { background: rgba(184,137,43,0.16); color: var(--accent2); }
+.badge-member { background: rgba(74,107,94,0.12); color: var(--text2); }
 
 .label {
   display: block;
@@ -151,9 +153,9 @@ select option { background: var(--bg3); }
   font-size: 0.82rem;
   margin-top: 8px;
   padding: 8px 12px;
-  background: rgba(239,68,68,0.08);
+  background: rgba(214,69,69,0.08);
   border-radius: 6px;
-  border: 1px solid rgba(239,68,68,0.15);
+  border: 1px solid rgba(214,69,69,0.2);
 }
 
 .empty-state {
@@ -186,3 +188,11 @@ select option { background: var(--bg3); }
   gap: 16px;
   color: var(--text3);
 }
+
+/* Login card: white with green accents */
+.auth-card {
+  border-top: 4px solid #064E3B;
+  box-shadow: 0 10px 40px rgba(6,78,59,0.12);
+}
+.auth-card .label { color: #064E3B; }
+.auth-card input { background: #FAF6EC; }

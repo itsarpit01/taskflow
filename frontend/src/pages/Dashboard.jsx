@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../api';
 import { useAuth } from '../context/AuthContext';
 
-const priorityColors = { low: '#94a3b8', medium: '#6366f1', high: '#f59e0b', urgent: '#ef4444' };
+const priorityColors = { low: '#7F9A8E', medium: '#064E3B', high: '#D9731A', urgent: '#D64545' };
 const statusLabels = { todo: 'To Do', in_progress: 'In Progress', review: 'Review', done: 'Done' };
 
 function StatCard({ label, value, color, icon }) {
@@ -81,17 +81,17 @@ export default function Dashboard() {
 
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 32 }}>
-        <StatCard label="To Do" value={taskStats.todo} color="#94a3b8" icon="○" />
-        <StatCard label="In Progress" value={taskStats.in_progress} color="#6366f1" icon="◔" />
-        <StatCard label="In Review" value={taskStats.review} color="#f59e0b" icon="◑" />
-        <StatCard label="Completed" value={taskStats.done} color="#10b981" icon="●" />
+        <StatCard label="To Do" value={taskStats.todo} color="#7F9A8E" icon="○" />
+        <StatCard label="In Progress" value={taskStats.in_progress} color="#064E3B" icon="◔" />
+        <StatCard label="In Review" value={taskStats.review} color="#B7791F" icon="◑" />
+        <StatCard label="Completed" value={taskStats.done} color="#0B8A5B" icon="●" />
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 24 }}>
         {/* My Tasks */}
         <div>
           {overdueTasks.length > 0 && (
-            <div className="card" style={{ marginBottom: 20, border: '1px solid rgba(239,68,68,0.2)', background: 'rgba(239,68,68,0.04)' }}>
+            <div className="card" style={{ marginBottom: 20, border: '1px solid rgba(214,69,69,0.25)', background: 'rgba(214,69,69,0.05)' }}>
               <h3 style={{ fontSize: '0.9rem', color: 'var(--red)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
                 ⚠ Overdue ({overdueTasks.length})
               </h3>
@@ -135,7 +135,7 @@ export default function Dashboard() {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <div style={{ fontWeight: 500, fontSize: '0.875rem' }}>{p.name}</div>
                   <span style={{
-                    background: 'rgba(99,102,241,0.1)', color: 'var(--accent)',
+                    background: 'var(--accent-soft)', color: 'var(--accent)',
                     borderRadius: 20, padding: '2px 8px', fontSize: '0.72rem', fontWeight: 600
                   }}>{p.open_tasks} open</span>
                 </div>

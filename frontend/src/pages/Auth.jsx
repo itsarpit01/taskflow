@@ -7,7 +7,7 @@ function AuthLayout({ children, title, subtitle }) {
     <div style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
       background: 'var(--bg)',
-      backgroundImage: 'radial-gradient(ellipse at 20% 20%, rgba(99,102,241,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(34,211,238,0.05) 0%, transparent 60%)',
+      backgroundImage: 'radial-gradient(ellipse at 20% 20%, rgba(6,78,59,0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(184,137,43,0.06) 0%, transparent 60%)',
       padding: '20px'
     }}>
       <div style={{ width: '100%', maxWidth: 420 }} className="fade-in">
@@ -19,14 +19,14 @@ function AuthLayout({ children, title, subtitle }) {
             <div style={{
               width: 38, height: 38, background: 'var(--accent)',
               borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '1.1rem', boxShadow: '0 4px 16px var(--accent-glow)'
+              fontSize: '1.1rem', boxShadow: '0 4px 16px var(--accent-glow)', color: '#fff'
             }}>⚡</div>
             TaskFlow
           </div>
           <h1 style={{ fontSize: '1.6rem', marginBottom: 6 }}>{title}</h1>
           <p style={{ color: 'var(--text2)', fontSize: '0.9rem' }}>{subtitle}</p>
         </div>
-        <div className="card" style={{ padding: 28 }}>
+        <div className="card auth-card" style={{ padding: 28 }}>
           {children}
         </div>
       </div>

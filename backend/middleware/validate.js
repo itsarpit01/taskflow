@@ -1,11 +1,21 @@
-const { validationResult } = require('express-validator');
 const { isObjectId } = require('../utils/ids');
 
-// Runs after the validator rules; stops the request if any rule failed.
-function validate(req, res, next) {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
-  next();
+// Usage: router.post('/', validate(someSchema), ctrl.create)
+// Checks req.body against a Zod schema. On success, req.body is replaced with the
+// cleaned data (unknown fields are removed). On failure, replies 400 { error: '<first message>' }.
+function validate(schema) {
+  return (req, res, next) => {
+    const result = schema.safeParse(req.body ?? {});
+    if (!result.success) {
+      const issue = result.error.issues[0];
+      return res.status(400).json({
+        error: issue.message,
+        field: issue.path.join('.') || undefined,
+      });
+    }
+    req.body = result.data;
+    next();
+  };
 }
 
 // Use with router.param('taskId', validate.idParam): a malformed id is a 404,

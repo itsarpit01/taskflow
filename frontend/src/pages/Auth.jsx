@@ -2,6 +2,50 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
+function EyeIcon({ off }) {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {off ? (
+        <>
+          <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+          <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+          <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+          <line x1="2" y1="2" x2="22" y2="22" />
+        </>
+      ) : (
+        <>
+          <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+          <circle cx="12" cy="12" r="3" />
+        </>
+      )}
+    </svg>
+  );
+}
+
+// Password field with a show / hide (eye) button
+function PasswordInput(props) {
+  const [show, setShow] = useState(false);
+  return (
+    <div style={{ position: 'relative' }}>
+      <input {...props} type={show ? 'text' : 'password'} style={{ paddingRight: 44 }} />
+      <button
+        type="button"
+        onClick={() => setShow(v => !v)}
+        aria-label={show ? 'Hide password' : 'Show password'}
+        title={show ? 'Hide password' : 'Show password'}
+        style={{
+          position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)',
+          background: 'transparent', color: 'var(--text2)', padding: 6,
+          display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 6
+        }}
+      >
+        <EyeIcon off={show} />
+      </button>
+    </div>
+  );
+}
+
 function AuthLayout({ children, title, subtitle }) {
   return (
     <div style={{
@@ -13,16 +57,11 @@ function AuthLayout({ children, title, subtitle }) {
       <div style={{ width: '100%', maxWidth: 420 }} className="fade-in">
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 24,
-            fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.5rem'
-          }}>
-            <div style={{
-              width: 38, height: 38, background: 'var(--accent)',
-              borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontSize: '1.1rem', boxShadow: '0 4px 16px var(--accent-glow)', color: '#fff'
-            }}>⚡</div>
-            TaskFlow
-          </div>
+            width: 190, height: 74, borderRadius: 999, margin: '0 auto 24px',
+            backgroundImage: 'url(/logo.jpeg)',
+            backgroundSize: '251px auto', backgroundPosition: '-33px -86px',
+            backgroundRepeat: 'no-repeat'
+          }} role="img" aria-label="TaskFlow" />
           <h1 style={{ fontSize: '1.6rem', marginBottom: 6 }}>{title}</h1>
           <p style={{ color: 'var(--text2)', fontSize: '0.9rem' }}>{subtitle}</p>
         </div>
@@ -64,7 +103,7 @@ export function Login() {
         </div>
         <div className="form-group">
           <label className="label">Password</label>
-          <input type="password" placeholder="••••••••" required
+          <PasswordInput placeholder="••••••••" required
             value={form.password} onChange={e => setForm({...form, password: e.target.value})} />
         </div>
         {error && <div className="error-msg">{error}</div>}
@@ -119,7 +158,7 @@ export function Signup() {
         </div>
         <div className="form-group">
           <label className="label">Password</label>
-          <input type="password" placeholder="Min 6 characters" required minLength={6}
+          <PasswordInput placeholder="Min 6 characters" required minLength={6}
             value={form.password} onChange={e => setForm({...form, password: e.target.value})} />
         </div>
         <div className="form-group">

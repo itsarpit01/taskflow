@@ -31,16 +31,11 @@ export default function Layout({ children }) {
         {/* Logo */}
         <div style={{ padding: '0 20px 24px', borderBottom: '1px solid var(--border)' }}>
           <div style={{
-            display: 'flex', alignItems: 'center', gap: 10,
-            fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.15rem'
-          }}>
-            <div style={{
-              width: 32, height: 32, background: 'var(--accent)', borderRadius: 8,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem',
-              color: '#fff'
-            }}>⚡</div>
-            TaskFlow
-          </div>
+            width: 150, height: 58, borderRadius: 999,
+            backgroundImage: 'url(/logo.jpeg)',
+            backgroundSize: '198px auto', backgroundPosition: '-26px -68px',
+            backgroundRepeat: 'no-repeat'
+          }} role="img" aria-label="TaskFlow" />
         </div>
 
         {/* Nav */}

@@ -74,7 +74,7 @@ export default function Dashboard() {
     <div className="fade-in">
       <div style={{ marginBottom: 32 }}>
         <h1 style={{ fontSize: '1.8rem', marginBottom: 4 }}>
-          Good {new Date().getHours() < 12 ? 'morning' : 'afternoon'}, {user?.name?.split(' ')[0]} 👋
+          Good {new Date().getHours() < 12 ? 'morning' : 'afternoon'}, {user?.name?.split(' ')[0]}
         </h1>
         <p style={{ color: 'var(--text2)' }}>Here's what's happening with your projects today.</p>
       </div>

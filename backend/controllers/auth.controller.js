@@ -3,7 +3,10 @@ const User = require('../models/user.model');
 const { generateToken } = require('../middleware/auth');
 
 exports.signup = async (req, res) => {
-  const { name, email, password, role = 'member' } = req.body;
+  // Role from the request body is ignored: public signup always creates a member.
+  // Admins are created by autoSeed or promoted by an existing admin on the Users page.
+  const { name, email, password } = req.body;
+  const role = 'member';
   try {
     if (await User.emailExists(email)) {
       return res.status(409).json({ error: 'Email already registered' });

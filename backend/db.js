@@ -7,7 +7,7 @@ async function connectDb(uri = process.env.MONGODB_URI) {
   await mongoose.connect(uri);
   // Build indexes (e.g. unique email) before the server accepts requests.
   await Promise.all(Object.values(mongoose.models).map((model) => model.init()));
-  console.log('✅ MongoDB connected');
+  console.log('MongoDB connected');
 }
 
 module.exports = { connectDb };
